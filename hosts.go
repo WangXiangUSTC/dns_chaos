@@ -1,4 +1,4 @@
-package dns_chaos
+package dnschaos
 
 import (
 	"context"
@@ -89,7 +89,7 @@ func (h Chaos) otherRecordsExist(qname string) bool {
 }
 
 // Name implements the plugin.Handle interface.
-func (h Chaos) Name() string { return "chaosmesh" }
+func (h Chaos) Name() string { return "dnschaos" }
 
 // a takes a slice of net.IPs and returns a slice of A RRs.
 func a(zone string, ttl uint32, ips []net.IP) []dns.RR {

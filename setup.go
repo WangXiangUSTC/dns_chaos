@@ -1,4 +1,4 @@
-package dns_chaos
+package dnschaos
 
 import (
 	"os"
@@ -14,9 +14,9 @@ import (
 	"github.com/caddyserver/caddy"
 )
 
-var log = clog.NewWithPlugin("chaosmesh")
+var log = clog.NewWithPlugin("dnschaos")
 
-func init() { plugin.Register("chaosmesh", setup) }
+func init() { plugin.Register("dnschaos", setup) }
 
 func periodicHostsUpdate(h *Chaos) chan bool {
 	parseChan := make(chan bool)
@@ -42,7 +42,7 @@ func periodicHostsUpdate(h *Chaos) chan bool {
 func setup(c *caddy.Controller) error {
 	h, err := hostsParse(c)
 	if err != nil {
-		return plugin.Error("chaosmesh", err)
+		return plugin.Error("dnschaos", err)
 	}
 
 	parseChan := periodicHostsUpdate(&h)

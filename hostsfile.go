@@ -1,4 +1,4 @@
-package dns_chaos
+package dnschaos
 
 import (
 	"bufio"
